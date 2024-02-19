@@ -41,8 +41,9 @@ const handleGenerateNewShortURL = async (req, res) => {
 
 const handleRedirectShortURL = async (req, res) => {
   try {
+    console.log(req.url)
     const { shortURLId } = req.params;
-    console.log(shortURLId);
+    console.log('shortURLId', shortURLId);
     const dbResponse = await urlDocument.findOneAndUpdate(
       {
         shortURLId,
